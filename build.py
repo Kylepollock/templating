@@ -1,5 +1,19 @@
 print('this is the build')
 
+
+
+from jinja2 import Template
+index_html = open("content/index.html").read()
+template_html = open("templates/base.html").read()
+template = Template(template_html)
+template.render(
+    title="Homepage",
+    content=index_html,
+)
+
+
+
+
 def main():
 	top = ('templates/top.html')
 	bottom = ('templates/bottom.html')
@@ -30,6 +44,9 @@ if __name__ == "__main__":
   main()
 
 #template = open('templates/base.html').read() 
+
+
+
 
 
 def listdic():
