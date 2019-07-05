@@ -5,6 +5,8 @@ print('this is the build')
 from jinja2 import Template
 index_html = open("content/index.html").read()
 template_html = open("templates/base.html").read()
+give_html = open("content/give.html").read()
+contact_html = open("content/contact.html").read()
 template = Template(template_html)
 template.render(
     title="Homepage",
