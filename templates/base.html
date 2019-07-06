@@ -3,12 +3,18 @@
 
 <head>
 
+
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Mobize Love Playbook</title>
+
+
+{% for page in pages %}
+<a href="{{ page.output_filename }}">{{ page.title }}</a>
+{% endfor %}
 
   <!-- Custom fonts for this theme -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -46,6 +52,10 @@
           </li>
            <li class="nav-item mx-0 mx-lg-1">
             <a class="nav-link py-3 px-0 px-lg-3 rounded" href="give.html">Give</a>
+
+
+
+
           </li>
         </ul>
       </div>

@@ -1,5 +1,6 @@
 def listdic():
 
+	i = 0
 	pages = [] 
 
 
@@ -10,29 +11,37 @@ def listdic():
 
 
 	for html_file_name in all_html_files:
-		print(html_file_name)
-		print("templates/base.html")
+		# print(html_file_name)
+		# print("templates/base.html")
 
 
 		import os
-		file_path = html_file_name
+		file_path = all_html_files[i]
 		file_name = os.path.basename(file_path)
+		i = i + 1
+
+
 		print(file_name)
+		
+		# print(file_name)
 		name_only, extension = os.path.splitext(file_name)
-		print(name_only)
+		# print(name_only)
+
+		path = "content/index.html"
 
 
 		pages.append({
-		    "filename": html_file_name,
+		    "filename": "content/" + file_name,
 		    "title": name_only,
-		    "output": "docs/" + name_only + ".html"
+		    "output": "docs/" + file_name
+		    # "filename_only": filename,
 		}) 
-		print(pages)
+		# print(pages)
 
 
 		for page in pages:
-			template = open(html_file_name).read()
-			combined_file = template.replace("{{content}}",html_file_name)
+			template = open(page['filename']).read()
+			combined_file = template.replace("{{content}}",template)
 			open(page['output'],'w+').write(combined_file)
 
 			
