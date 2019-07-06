@@ -17,8 +17,8 @@ template.render(
 
 
 def main():
-	top = ('templates/top.html')
-	bottom = ('templates/bottom.html')
+	# top = ('templates/top.html')
+	# bottom = ('templates/bottom.html')
 	give = ('content/give.html')
 	contact = ('content/contact.html')
 	index = ('content/index.html')
@@ -27,18 +27,12 @@ def main():
 #combine top.html with bottom.htm ito base.html with {{content}}
 
 
-
-
-
 	
-	top_template = open(top).read()
-	bottom_template = open(bottom).read()
-	base_template = top_template + "{{content}}" + bottom_template
-	base_template = open('templates/base.html').read()
-	open('templates/base.html', 'w+').write(base_template)
-
-
-	
+	# top_template = open(top).read()
+	# bottom_template = open(bottom).read()
+	# base_template = top_template + "{{content}}" + bottom_template
+	# base_template = open('templates/base.html').read()
+	# open('templates/base.html', 'w+').write(base_template)
 
 
 
@@ -53,30 +47,30 @@ if __name__ == "__main__":
 
 def listdic():
 
-	pages = [ {
-        "filename": "content/index.html",
-        "output": "docs/index.html",
-        "title": "Mobilize Love Playbook",
-		}, 
-		{
-		"filename": "content/contact.html",
-		"output": "docs/contact.html",
-		"title": "Contact",
-		}, 
-		{
-		"filename": "content/give.html",
-		"output": "docs/give.html",
-		"title": "Give",
-		}
-		]
+	pages = [] 
+	pages.append({
+	    "filename": "content/index.html",
+	    "title": "Index",
+	    "output": "docs/index.html",
+
+	    "filename": "content/contact.html",
+	    "title": "Contact",
+	    "output": "docs/contact.html",
+
+
+	    "filename": "content/give.html",
+	    "title": "Give",
+	    "output": "docs/give.html",
+	}) 
+	print(pages)
 
 
 
-	for page in pages:
-		template = open('templates/base.html').read()
-		filename = open(page['filename']).read()
-		combined_file = template.replace("{{content}}",filename)
-		open(page['output'],'w+').write(combined_file)
+	# for page in pages:
+	# 	template = open('templates/base.html').read()
+	# 	filename = open(page['filename']).read()
+	# 	combined_file = template.replace("{{content}}",filename)
+	# 	open(page['output'],'w+').write(combined_file)
 		# title1 = open(page['title']).read()
 		# title = template.replace("{{title}}",title1)
 		# open(page['output'],'w+').write(filename)
