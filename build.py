@@ -66,11 +66,11 @@ def listdic():
 
 
 
-	# for page in pages:
-	# 	template = open('templates/base.html').read()
-	# 	filename = open(page['filename']).read()
-	# 	combined_file = template.replace("{{content}}",filename)
-	# 	open(page['output'],'w+').write(combined_file)
+	for page in pages:
+		template = open('templates/base.html').read()
+		filename = open(page['filename']).read()
+		combined_file = template.replace("{{content}}",filename)
+		open(page['output'],'w+').write(combined_file)
 		# title1 = open(page['title']).read()
 		# title = template.replace("{{title}}",title1)
 		# open(page['output'],'w+').write(filename)
